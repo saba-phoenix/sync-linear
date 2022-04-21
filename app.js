@@ -57,9 +57,10 @@ const getTodoList = (pathToRepo) => __awaiter(void 0, void 0, void 0, function* 
     // console.log("entered the function");
     const todoList = yield getTodoList(pathToRepo);
     const linearClient = new LinearClient({ apiKey: LINEAR_API_KEY });
-    console.log(process.argv);
+    // console.log(process.argv);
     const teams = yield linearClient.teams();
     let KEY = process.argv[2] !== undefined ? process.argv[2] : LINEAR_TEAM_IDENTIFIER;
+    console.log(KEY);
     let idx = -1, i = 0;
     for (const team of teams.nodes) {
         if (team.key === KEY) {
