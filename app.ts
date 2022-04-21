@@ -49,14 +49,11 @@ const getTodoList = async (pathToRepo: string) => {
 
 // Call start
 (async () => {
-  // console.log("entered the function");
   const todoList = await getTodoList(pathToRepo);
   const linearClient = new LinearClient({ apiKey: LINEAR_API_KEY });
-  // console.log(process.argv);
   const teams = await linearClient.teams();
   let KEY =
     process.argv[2] !== undefined ? process.argv[2] : LINEAR_TEAM_IDENTIFIER;
-  console.log(KEY);
   let idx = -1,
     i = 0;
   for (const team of teams.nodes) {
