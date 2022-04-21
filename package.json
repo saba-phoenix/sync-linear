@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@linear/sdk": "^1.22.0",
+    "dotenv": "^16.0.0",
     "nodegit": "0.28.0-alpha.13"
   },
   "devDependencies": {
