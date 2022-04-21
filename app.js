@@ -12,8 +12,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const NodeGit = require("nodegit");
 const pathToRepo = require("path").resolve(".git");
-const LINEAR_API_KEY = ""; // write your linear API key here
-const LINEAR_TEAM_IDENTIFIER = ""; // write your linear team identifier here, Three letter word, all capital
+const LINEAR_API_KEY = "lin_api_jrmrYQsNKV8YFpXkT3kixC9TTHDzRI7IjFoQMw7h"; // write your linear API key here
+const LINEAR_TEAM_IDENTIFIER = "SAB"; // write your linear team identifier here, Three letter word, all capital
 const { LinearClient, LinearFetch, User } = require("@linear/sdk");
 const getTodoFromComment = (comment) => __awaiter(void 0, void 0, void 0, function* () {
     if (comment.substring(0, 4).toLowerCase() == "todo") {
@@ -54,31 +54,33 @@ const getTodoList = (pathToRepo) => __awaiter(void 0, void 0, void 0, function* 
 });
 // Call start
 (() => __awaiter(void 0, void 0, void 0, function* () {
-    const todoList = yield getTodoList(pathToRepo);
-    const linearClient = new LinearClient({ apiKey: LINEAR_API_KEY });
-    const teams = yield linearClient.teams();
-    let KEY = process.argv.slice(2)[0] !== undefined
-        ? process.argv.slice(2)[0]
-        : LINEAR_TEAM_IDENTIFIER;
-    let idx = -1, i = 0;
-    for (const team of teams.nodes) {
-        if (team.key === KEY) {
-            idx = i;
-            break;
-        }
-        i++;
-    }
-    if (idx === -1)
-        return 0;
-    const team = teams.nodes[idx];
-    if (team.id) {
-        for (const todo of todoList) {
-            console.log(todo);
-            yield linearClient.issueCreate({
-                teamId: team.id,
-                title: todo,
-            });
-        }
-    }
+    console.log("entered the function");
+    // const todoList = await getTodoList(pathToRepo);
+    // const linearClient = new LinearClient({ apiKey: LINEAR_API_KEY });
+    // const teams = await linearClient.teams();
+    // let KEY =
+    //   process.argv.slice(2)[0] !== undefined
+    //     ? process.argv.slice(2)[0]
+    //     : LINEAR_TEAM_IDENTIFIER;
+    // let idx = -1,
+    //   i = 0;
+    // for (const team of teams.nodes) {
+    //   if (team.key === KEY) {
+    //     idx = i;
+    //     break;
+    //   }
+    //   i++;
+    // }
+    // if (idx === -1) return 0;
+    // const team = teams.nodes[idx];
+    // if (team.id) {
+    //   for (const todo of todoList) {
+    //     console.log(todo);
+    //     await linearClient.issueCreate({
+    //       teamId: team.id,
+    //       title: todo,
+    //     });
+    //   }
+    // }
     return 0;
 }))();

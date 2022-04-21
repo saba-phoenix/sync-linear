@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 const NodeGit = require("nodegit");
 const pathToRepo = require("path").resolve(".git");
-const LINEAR_API_KEY = ""; // write your linear API key here
-const LINEAR_TEAM_IDENTIFIER = ""; // write your linear team identifier here, Three letter word, all capital
+const LINEAR_API_KEY = "lin_api_jrmrYQsNKV8YFpXkT3kixC9TTHDzRI7IjFoQMw7h"; // write your linear API key here
+const LINEAR_TEAM_IDENTIFIER = "SAB"; // write your linear team identifier here, Three letter word, all capital
 const { LinearClient, LinearFetch, User } = require("@linear/sdk");
 
 const getTodoFromComment = async (comment: string) => {
@@ -49,6 +49,7 @@ const getTodoList = async (pathToRepo: string) => {
 
 // Call start
 (async () => {
+  // console.log("entered the function");
   const todoList = await getTodoList(pathToRepo);
   const linearClient = new LinearClient({ apiKey: LINEAR_API_KEY });
   const teams = await linearClient.teams();
