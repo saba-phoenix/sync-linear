@@ -6,6 +6,11 @@
   "bin": {
     "test": "app.js"
   },
+  "keywords": [
+    "linear",
+    "tickets",
+    "todo"
+  ],
   "author": "Saba",
   "license": "MIT",
   "scripts": {
