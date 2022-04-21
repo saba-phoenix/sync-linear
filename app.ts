@@ -2,7 +2,7 @@
 const NodeGit = require("nodegit");
 const pathToRepo = require("path").resolve(".git");
 const LINEAR_API_KEY = process.env.LINEAR_API_KEY;
-const LINEAR_TEAM_IDENTIFIER = process.env.LINEAR_API_KEY;
+const LINEAR_TEAM_IDENTIFIER = process.env.LINEAR_TEAM_IDENTIFIER;
 const { LinearClient, LinearFetch, User } = require("@linear/sdk");
 
 const getTodoFromComment = async (comment: string) => {
