@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+require("dotenv").config();
 const NodeGit = require("nodegit");
 const pathToRepo = require("path").resolve(".git");
 const LINEAR_API_KEY = process.env.LINEAR_API_KEY;
