@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+require("dotenv").config();
 const NodeGit = require("nodegit");
 const pathToRepo = require("path").resolve(".git");
 const LINEAR_API_KEY = process.env.LINEAR_API_KEY;

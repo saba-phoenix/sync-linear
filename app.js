@@ -13,7 +13,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const NodeGit = require("nodegit");
 const pathToRepo = require("path").resolve(".git");
 const LINEAR_API_KEY = process.env.LINEAR_API_KEY;
-const LINEAR_TEAM_IDENTIFIER = process.env.LINEAR_API_KEY;
+const LINEAR_TEAM_IDENTIFIER = process.env.LINEAR_TEAM_IDENTIFIER;
 const { LinearClient, LinearFetch, User } = require("@linear/sdk");
 const getTodoFromComment = (comment) => __awaiter(void 0, void 0, void 0, function* () {
     if (comment.substring(0, 4).toLowerCase() == "todo") {
