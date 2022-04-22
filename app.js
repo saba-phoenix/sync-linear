@@ -67,7 +67,7 @@ const createSingleTodoAndGetLink = (todo, teamId) => __awaiter(void 0, void 0, v
 });
 const doesntContainLinearLink = (line) => {
     if (line === undefined)
-        return true;
+        return false;
     line = line.toString().trim();
     if (line.substring(0, 2) === "//") {
         const math = "https://linear.app/";

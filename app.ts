@@ -133,7 +133,6 @@ const getTodoList = async (pathToRepo: string, teamId: string) => {
         alreadyAdded++;
       }
     }
-
     const wholeText = allLineList.join("\r\n");
     fs.writeFileSync(filePath, wholeText, "utf8");
   }
